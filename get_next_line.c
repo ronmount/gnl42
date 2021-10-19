@@ -87,7 +87,7 @@ char	*get_next_line(int fd)
 	static char	*save;
 
 	str = NULL;
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (read(fd, 0, 0) == -1 || BUFFER_SIZE <= 0)
 		return (0);
 	buffer = malloc(BUFFER_SIZE + 1);
 	if (!buffer)
